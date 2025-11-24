@@ -96,6 +96,17 @@
 // Returns player's waypoints.
 // -->
 
+// <--[tag]
+// @attribute <PlayerTag.waypoints>
+// @returns ListTag
+// @description
+// Returns player's waypoints.
+// Works with offline players.
+// @example
+// # Narrates a list of player's waypoint ids.
+// - narrate <player.waypoints>
+// -->
+
 // ---------------------------------------------------
 // Tags: BinaryTag
 // ---------------------------------------------------
@@ -127,6 +138,16 @@
 // @returns ListTag
 // @description
 // Returns a list of all global waypoints.
+// -->
+
+// <--[tag]
+// @attribute <util.waypoints>
+// @returns ListTag
+// @description
+// Returns global waypoints.
+// @example
+// # Narrates a list of global waypoint ids.
+// - narrate <util.waypoints>
 // -->
 
 // ---------------------------------------------------
@@ -262,6 +283,53 @@
 // @Usage
 // Use to place a custom block at player's location.
 // - set_custom_block <player.location> itemsadder:ruby_block
+// -->
+
+// ---------------------------------------------------
+// External Command: Waypoint
+// ---------------------------------------------------
+
+// <--[command]
+// @Name Waypoint
+// @Syntax waypoint [type:add/update/remove/clear] (id:<id>) (location:<location>) (compass_icon:<#>) (compass_text:<text>) (world_text:<text>|...) (view_distance:<#.#>) (targets:<player>|...)
+// @Required 1
+// @Maximum 8
+// @Short Render a waypoint on player's client HUD screen.
+// @group player
+//
+// @Description
+// Render a waypoint on player's client HUD screen.
+//
+// @Tags
+// None
+//
+// @Usage
+// Use to render a waypoint to player's current location. If a line contains a string "%no_background%", it tells player's client NOT to render text's background. If a line contains a string "%scale:<#.##>%", it tells player's client to render the text at the specified scale. If a line contains a string "%distance%", it will be replaced with the distance from player's current location to the waypoint in format "0.00" in real time.
+// - waypoint type:add id:test location:<player.location> "compass_text:<red>Test Waypoint" "world_text:%no_background%<red>Hello World</red>|<blue>Distance:</blue> <white>%distance%m</white>|%scale:0.60%Hi! I'm smaller than other lines."
+//
+// @Usage
+// Use to update player's waypoint location.
+// - waypoint type:update id:test location:<player.location>
+//
+// @Usage
+// Use to remove player's waypoint.
+// - waypoint type:remove id:test targets:<player>
+//
+// @Usage
+// Use to clear all waypoints of all players.
+// - waypoint type:clear targets:<player>
+//
+// @Usage
+// If the "players" parameter was not specified, the waypoint will be displayed to everyone.
+// - waypoint type:add id:global_waypoint location:<player.location> "compass_text:<red>Global Waypoint" "world_text:<red>Everyone will see this!"
+//
+// @Usage
+// Use to remove a global waypoint.
+// - waypoint type:remove id:global_waypoint
+//
+// @Usage
+// Use to clear all of global waypoints.
+// - waypoint type:clear
 // -->
 
 // ---------------------------------------------------
