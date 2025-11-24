@@ -333,6 +333,75 @@
 // -->
 
 // ---------------------------------------------------
+// External Command: SetFmVariable
+// ---------------------------------------------------
+
+// <--[command]
+// @Name SetFmVariable
+// @Syntax setfmvariable [name:<name>] [value:<value>] (targets:<player>|...)
+// @Required 2
+// @Maximum 3
+// @Short Set a FancyMenu variable for the client.
+// @Group player
+//
+// @Description
+// Set a FancyMenu variable for the client.
+//
+// @Tags
+// None
+//
+// @Usage
+// Use to set a FancyMenu variable for the player.
+// - setfmvariable name:test_variable value:<empty>
+// -->
+
+// ---------------------------------------------------
+// External Command: OpenGui
+// ---------------------------------------------------
+
+// <--[command]
+// @Name OpenGui
+// @Syntax opengui [id:<id>] (targets:<player>|...)
+// @Required 1
+// @Maximum 2
+// @Short Open a screen for the client.
+// @Group player
+//
+// @Description
+// Open a screen for the client.
+//
+// @Tags
+// None
+//
+// @Usage
+// Use to open a screen for the player.
+// - opengui id:net.minecraft.client.gui.screens.inventory.HorseInventoryScreen
+// -->
+
+// ---------------------------------------------------
+// External Command: CloseGui
+// ---------------------------------------------------
+
+// <--[command]
+// @Name CloseGui
+// @Syntax closegui (targets:<player>|...)
+// @Required 0
+// @Maximum 1
+// @Short Close current screen for the client.
+// @Group player
+//
+// @Description
+// Close current screen for the client.
+//
+// @Tags
+// None
+//
+// @Usage
+// Use to close current screen for the player.
+// - closegui
+// -->
+
+// ---------------------------------------------------
 // Player Event: PlayerChangesOptions
 // ---------------------------------------------------
 
